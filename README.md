@@ -12,3 +12,6 @@ Demo Flask App Created
 ![Screenshot 2022-10-01 204335](https://user-images.githubusercontent.com/98447901/193416134-f681d79a-466f-4a7a-851f-3c75af4bfa63.png)
 ![Screenshot 2022-10-01 204444](https://user-images.githubusercontent.com/98447901/193416140-505d17df-b967-4cbc-94b5-6bfbb4a13598.png)
 
+Install IBM Cloud CLI:
+![Screenshot 2022-10-12 104053](https://user-images.githubusercontent.com/98447901/195255451-7314457d-6783-4e86-8e29-fac0298f4913.png)
+
