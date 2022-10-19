@@ -1,3 +1,4 @@
+from asyncio.windows_events import NULL
 from flask import Flask, render_template, request
 import psycopg2
 app = Flask(__name__)
@@ -41,7 +42,7 @@ def User():
         if len(name) != 0 and len(password) != 0:
             cursor.execute("Select username from Users where username = '%s' and password = '%s'" %(name,password))
             account = cursor.fetchone()
-            if account == '':
+            if account == None:
                 cursor.execute("insert into Users values('%s','%s')" %(name, password))
                 database.commit()
                 database.close()
