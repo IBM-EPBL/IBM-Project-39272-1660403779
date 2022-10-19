@@ -38,10 +38,11 @@ def User():
     if request.method == 'POST' and 'username' in request.form and 'password' in request.form:
         name = request.form['username']
         password = request.form['password']
-        cursor.execute("insert into Users values('%s','%s')" %(name, password))
-        database.commit()
-        database.close()
-        return render_template("Home.html")
+        if len(name) != 0 and len(password) != 0:
+            cursor.execute("insert into Users values('%s','%s')" %(name, password))
+            database.commit()
+            database.close()
+            return render_template("Home.html")
     return "<h1>Account creation failed</h1>"
 
 @app.route("/userpage")
