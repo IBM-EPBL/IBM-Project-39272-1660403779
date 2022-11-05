@@ -22,7 +22,9 @@ def Login():
         account = ibm_db.fetch_assoc(stmt)
         array = json.dumps(account)
         username = json.loads(array)
-        if username["USERNAME"] != None:
+        if username == False:
+            return render_template("CreateUser.html",value="Login Failed")
+        elif username["USERNAME"] != None:
             return render_template("Welcome.html",value=username["USERNAME"])
         else:
             return render_template("CreateUser.html",value="Login Failed")
