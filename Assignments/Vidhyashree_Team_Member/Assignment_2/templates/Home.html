@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Home</title>
+    <link rel="stylesheet" href="./style.css">
+</head>
+<body>
+  <div id="bg">
+    <!-- <form action="{{ url_for( 'Login' ) }}" method="post">
+        <input type="text" name="username" placeholder="Enter name">
+        <input type="text" name="password" placeholder="Enter password">
+        <input type="submit" value="Login">
+    </form>
+    <form action="{{ url_for( 'Userpage' ) }}">
+        <input type="submit" value="CreateUser">
+    </form> -->
+    <div class="login-page">
+      <div class="form">
+        <form class="login-form">
+          <input type="text" placeholder="Username"/>
+          <input type="password" placeholder="Password"/>
+          <button>Login</button>
+          <p class="message">Not registered? <a href="{{ url_for( 'Userpage' ) }}">Create an account</a></p>
+        </form>
+      </div>
+    </div>
+  </div>
+</body>
+</html>
