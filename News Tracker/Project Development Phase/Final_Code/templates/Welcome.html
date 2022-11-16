@@ -1,0 +1,44 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="{{url_for('static',filename='welcome.css')}}">
+    <title>Welcome</title>
+</head>
+<body>
+        <header>
+            <h1>NEWS TRACKER</h1>
+            <div class="Search">
+                <a href="{{ url_for( 'logout' ) }}" style="text-decoration : none">Logout</a>
+                <form action="{{ url_for( 'Search' ) }}" method="post">
+                    <input type="text" name="query" />
+                    <input type="submit" value="Search" id="submit-btn">
+                </form>
+            </div>
+        </header>
+        <section>
+            {% for usernews in value %}
+                {% for news in usernews["value"] %}
+                        {% for val in news %}
+                                {% if val == "name" %}
+                                    <h1> {{news[val]}} </h1>
+                                {% elif val == "url" %}
+                                    <a href="{{ news[val] }}" style="text-decoration : none">ReadMore...</a><br><br>
+                                {% elif val == "description" %}
+                                    <p>{{ news[val] }}</p>
+                                {% elif val == "provider" %}
+                                    <span>Provider : {{ news[val][0]["_type"] }} : {{news[val][0]["name"]}} </span><br><br>
+                                {% elif val == "datePublished" %}
+                                    <span>Date : {{ news[val] }}</span><br>
+                                {% elif val == "image" %}
+                                    <img src="{{news[val]['thumbnail']['contentUrl']}}" alt="Read More..." style="width : 300px; height : 300px"><br>
+                                {% endif %}
+                        {% endfor %}
+                {% endfor %}
+            {% endfor %}
+        </section>
+    </body>
+</html>
