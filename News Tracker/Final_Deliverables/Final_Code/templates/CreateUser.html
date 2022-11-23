@@ -1,0 +1,30 @@
+{% extends "Error.html" %}
+{% block body %}
+  <!DOCTYPE html>
+  <html lang="en">
+  <head>
+      <meta charset="UTF-8">
+      <meta http-equiv="X-UA-Compatible" content="IE=edge">
+      <meta name="viewport" content="width=device-width, initial-scale=1.0">
+      <title>User</title>
+      <link rel="stylesheet" href="{{url_for('static',filename='Style.css')}}">
+  </head>
+  <body>
+      <div id="bg"></div>
+      <div class="login-page">
+          <div class="form">
+            <form class="register-form"  action="{{ url_for( 'User' ) }}" method="post">
+              <b><h2>NALAYA THIRAN</h2></b>
+              <b><h3>NEWS TRACKER</h3></b>
+              <input type="text" name="username" placeholder="Name"/>
+              <input type="email" name="email" placeholder="Email Address"/>
+              <input type="password" name="password" placeholder="Password"/>
+              <input type="submit" class="button" value="Create">
+              <p class="message">Already registered? <a href="{{ url_for( 'Home' ) }}">Sign In</a></p>
+            </form>
+          </div>
+      </div>
+  </body>
+  </html>
+{% endblock %}
+
